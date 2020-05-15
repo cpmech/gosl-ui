@@ -3,6 +3,8 @@ import React from 'react';
 import { RouteComponentProps } from '@reach/router';
 import { store, withUseObserver } from '../service';
 import { LoadingOrErrorCard } from '../components';
+import { InfoCard } from '../rcomps';
+import { styles } from '../styles';
 
 interface IProps extends RouteComponentProps {}
 
@@ -11,12 +13,16 @@ export const HomePage: React.FC<IProps> = () => {
   const { error, ready } = useObserver('App');
 
   if (!ready) {
-    return <LoadingOrErrorCard title="Plot" error={error} />;
+    return (
+      <div css={styles.content}>
+        <LoadingOrErrorCard title="Loading" error={error} />
+      </div>
+    );
   }
 
   return (
-    <div>
-      <p>HOME</p>
+    <div css={styles.content}>
+      <InfoCard title="Plot">PLOT GOES HERE</InfoCard>
     </div>
   );
 };

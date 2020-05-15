@@ -4,7 +4,7 @@ export const maxContentWidth = 1124;
 export const columnMinWidth = 300;
 export const columnMaxWidth = 400;
 
-export const main = {
+export const styles = {
   centered: css`
     display: flex;
     flex-direction: column;

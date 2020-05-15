@@ -1,3 +1,3 @@
 export * from './colors';
-export * from './main';
+export * from './styles';
 export * from './typography';

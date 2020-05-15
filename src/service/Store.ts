@@ -1,23 +1,34 @@
 import { sleep } from '@cpmech/basic';
 import { SimpleStore, IQueryFunction } from '@cpmech/simple-state';
+import { WS_SERVER } from './config';
+
+const connect = (): Promise<WebSocket> => {
+  return new Promise((resolve, reject) => {
+    const server = new WebSocket(WS_SERVER);
+    server.onopen = () => {
+      resolve(server);
+    };
+    server.onerror = (err) => {
+      reject(err);
+    };
+  });
+};
 
 interface IState {
   webSocket: WebSocket | null;
-  error: string;
 }
 
 const newZeroState = (): IState => ({
   webSocket: null,
-  error: '',
 });
 
 const onLoad = async (query: IQueryFunction, itemId: string): Promise<IState> => {
   await sleep(2000);
   try {
-    const ws = new WebSocket('ws://localhost:8081/observe');
-    return { webSocket: ws, error: '' };
-  } catch (error) {
-    return { webSocket: null, error };
+    const ws = await connect();
+    return { webSocket: ws };
+  } catch (_) {
+    throw new Error('Cannot connect to server via websocket');
   }
 };
 
