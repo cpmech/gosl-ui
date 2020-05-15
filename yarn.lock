@@ -1041,6 +1041,11 @@
   resolved "https://registry.yarnpkg.com/@cpmech/basic/-/basic-4.20.1.tgz#8fb64820243cd4d9684ecfe2cf4ecd6a0d7d7840"
   integrity sha512-MEs7Zho/ay41EsBWuqi3Z1sSutFPMAorYnLjAdd2/lHQNh7fEyFPl0A+lMEHs8MpFd9oO34EEp0Ff2pzSqT8Sw==
 
+"@cpmech/js2ts@^2.18.0":
+  version "2.18.0"
+  resolved "https://registry.yarnpkg.com/@cpmech/js2ts/-/js2ts-2.18.0.tgz#06f382c4018650ae9112f2917dd43b2d858de132"
+  integrity sha512-SInTowSTtPLl0SDjeVZOsgEoKOuL7lnW+YHO6GOS7XAwRlqnT1/3VESFBI6je5gahUGvWmXWBp+083JBoCv1kA==
+
 "@cpmech/rcomps@^3.20.0":
   version "3.20.0"
   resolved "https://registry.yarnpkg.com/@cpmech/rcomps/-/rcomps-3.20.0.tgz#d87689e71753641e6253a56d0edfb59cdbcb4e46"

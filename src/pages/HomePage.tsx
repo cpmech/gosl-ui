@@ -10,7 +10,7 @@ interface IProps extends RouteComponentProps {}
 
 export const HomePage: React.FC<IProps> = () => {
   const useObserver = withUseObserver(store);
-  const { error, ready } = useObserver('App');
+  const { error, ready } = useObserver('HomePage');
 
   if (!ready) {
     return (
@@ -22,7 +22,7 @@ export const HomePage: React.FC<IProps> = () => {
 
   return (
     <div css={styles.content}>
-      <InfoCard title="Plot">PLOT GOES HERE</InfoCard>
+      <InfoCard title="Plot">{JSON.stringify(store.state.curves.list)}</InfoCard>
     </div>
   );
 };

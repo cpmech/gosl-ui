@@ -2,4 +2,9 @@ import { Store } from './Store';
 
 export const store = new Store();
 
-store.load('');
+(async () => {
+  await store.load('');
+  if (!store.error) {
+    store.listen();
+  }
+})();
