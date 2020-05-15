@@ -1,9 +1,9 @@
 import React from 'react';
 import { RouteComponentProps } from '@reach/router';
 
-interface INotFoundProps extends RouteComponentProps {}
+interface IProps extends RouteComponentProps {}
 
-export const NotFound: React.FC<INotFoundProps> = () => {
+export const NotFoundPage: React.FC<IProps> = () => {
   return (
     <div>
       <p>NOT FOUND</p>
